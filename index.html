@@ -88,6 +88,13 @@
   </main>
 
   <script>
+    class ValidationError extends Error {
+      constructor(message) {
+        super(message);
+        this.name = "ValidationError";
+      }
+    }
+
     let form = document.querySelector('form');
     form.addEventListener('submit', e => {
       e.preventDefault();
@@ -204,6 +211,8 @@
     errorBtns[14].addEventListener("click", (e) => {
       console.timeEnd("Timer Button");
     });
+
+    throw new ValidationError("VALIDATION ERROR HERE!!!");
   </script>
 </body>
 
