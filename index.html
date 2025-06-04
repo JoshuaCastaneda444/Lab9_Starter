@@ -102,6 +102,105 @@
 
     // Start your code here
     // You may move this JS to another file if you wish
+    
+    // Console Log
+    errorBtns[0].addEventListener("click", (e) => {
+      console.log("Console Log Demo");
+    });
+
+    // Console Error
+    errorBtns[1].addEventListener("click", (e) => {
+      console.error("Console Error Demo");
+    });
+
+    // Console Count
+    errorBtns[2].addEventListener("click", (e) => {
+      console.count("Count Button");
+    });
+
+    // Console Warn
+    errorBtns[3].addEventListener("click", (e) => {
+      console.warn("Console Warn Button");
+    });
+
+    // Console Assert
+    errorBtns[4].addEventListener("click", (e) => {
+      const number = 2;
+      console.assert(number == 3, {number, error_message: 'The number does not equal 3'});
+    });
+
+    // Console Clear
+    errorBtns[5].addEventListener("click", (e) => {
+      console.clear();
+    });
+
+    // Console Dir
+    errorBtns[6].addEventListener("click", (e) => {
+      console.dir(errorBtns[6]);
+    });
+    
+    // Console dirxml
+    errorBtns[7].addEventListener("click", (e) => {
+      console.dirxml(errorBtns[7]);
+    });
+
+    // Console Group Start
+    errorBtns[8].addEventListener("click", (e) => {
+      console.group("console.group");
+    });
+
+    // Console Group End
+    errorBtns[9].addEventListener("click", (e) => {
+      console.groupEnd("console.group");
+    });
+
+    // Console Table
+    errorBtns[10].addEventListener("click", (e) => {
+      console.table([
+        {
+          name: 'Software Engineering',
+          num: 110
+        },
+        {
+          name: 'Operating Systems Principles',
+          num: 120
+        },
+        {
+          name: 'Progrmng Lang: Princpl & Paradigm',
+          num: 130
+        },
+        {
+          name: '3D User Interaction',
+          num: 165
+        },
+        {
+          name: 'Computer Graphics II: Rendering',
+          num: 168
+        }
+      ]);
+    });
+
+    // Start Timer
+    errorBtns[11].addEventListener("click", (e) => {
+      console.time("Timer Button");
+    });
+
+    // End Timer
+    errorBtns[12].addEventListener("click", (e) => {
+      console.timeEnd("Timer Button");
+    });
+
+    // Console Trace
+
+    handleBtnClick = (e) => {
+      const deep = () => { deeper(); };
+      const deeper = () => { deepest(); };
+      const deepest = () => { console.trace(); };
+      deep();
+    };
+    errorBtns[13].onclick = handleBtnClick;
+
+    // Trigger a Global Error
   </script>
 </body>
 
