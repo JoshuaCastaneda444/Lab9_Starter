@@ -64,7 +64,7 @@
         <input name="second-num" id="second-num" />
         <button id="calculate">Calculate</button>
         <br />
-        <!-- <output></output> -->
+        <output></output>
       </fieldset>
     </form>
 
@@ -87,6 +87,13 @@
     </section>
   </main>
 
+  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+  <script>
+    window.TrackJS && TrackJS.install({ 
+      // 
+      token: "6d8a149654e745f2bc99d441cd27acc6"
+    });
+  </script>
   <script>
     class ValidationError extends Error {
       constructor(message) {
@@ -209,10 +216,14 @@
 
     // Trigger a Global Error
     errorBtns[14].addEventListener("click", (e) => {
-      console.timeEnd("Timer Button");
+      // throw new ValidationError("INVALID!!!");
+      let boom = document.querySelector('#boom');
+      boom.innerHTML = "boom";
     });
 
-    throw new ValidationError("VALIDATION ERROR HERE!!!");
+    window.onerror = (e) => {
+      console.log("Sadly an error happened my friend");
+    };
   </script>
 </body>
 
