@@ -64,7 +64,7 @@
         <input name="second-num" id="second-num" />
         <button id="calculate">Calculate</button>
         <br />
-        <output></output>
+        <!-- <output></output> -->
       </fieldset>
     </form>
 
@@ -201,6 +201,9 @@
     errorBtns[13].onclick = handleBtnClick;
 
     // Trigger a Global Error
+    errorBtns[14].addEventListener("click", (e) => {
+      console.timeEnd("Timer Button");
+    });
   </script>
 </body>
 
